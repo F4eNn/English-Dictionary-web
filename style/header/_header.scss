@@ -3,6 +3,7 @@ header {
 	flex-direction: column;
 	align-items: center;
 	padding: 5.8rem 3rem;
+	// width: 100%;
 
 	nav {
 		display: flex;
@@ -21,32 +22,35 @@ header {
 				display: flex;
 				align-items: center;
 				gap: 15px;
-				margin-right: 2rem;
-				padding: 1rem 2rem;
-				border-right: 1px solid red;
-				font-size: 2rem;
-                min-width: 170px;
+				margin-right: clamp(1rem, 2.5vw, 3rem);
+				padding: 0.6rem 2.5rem;
+				border-right: 1px solid var(--vertical-line);
+				font-size: var(--md);
+				min-width: 145px;
+				font-weight: 600;
 			}
 			.content {
 				position: absolute;
-				left: -20px;
+				left: -3.6rem;
+				top: 4.5rem;
 				border-radius: 10px;
-                min-width: 160px;
-				padding: 1rem 0 1rem;
+				min-width: 183px;
+				padding: 1rem 0 2rem;
 				background-color: var(--dropdown-background-color);
 				box-shadow: 0 5px 16px 7px var(--dropdown-box-shadow);
 				// border: 1px solid red;
 			}
-            .hide-content{
-                display: none;
-            }
+			.hide-content {
+				display: none;
+			}
 			.content button {
 				color: var(--dropdown-option-color);
 				font-size: 1.8rem;
-				padding: 1.5rem 5rem 1rem 2rem;
+				padding: 1.5rem 5rem 0.4rem 2rem;
 				width: 100%;
 				text-align: left;
 				transition: color 0.3s;
+				// font-weight: 600;
 			}
 			.content button:hover {
 				color: var(--dropdonw-hover-color);
@@ -55,7 +59,45 @@ header {
 			.theme-button {
 				display: flex;
 				align-items: center;
+				justify-content: space-between;
+				min-width: 82px;
+
+				button {
+					height: 20px;
+					width: 40px;
+					border-radius: 10px;
+					position: relative;
+					background-color: var(--switch-theme);
+					transition: background-color 0.3s;
+				}
+				svg {
+					stroke: var(--switch-theme);
+				}
+				button:hover {
+					background-color: var(--purple-primary);
+				}
+				.circle-btn-element {
+					content: '';
+					position: absolute;
+					right: 4px;
+					top: 50%;
+					transform: translateY(-50%);
+					background-color: #fff;
+					height: 14px;
+					width: 14px;
+					border-radius: 50%;
+					transition: right 0.5s;
+				}
+				.dark-mode-off {
+					right: 22px;
+				}
 			}
 		}
 	}
 }
+@media (max-width: 375px) {
+	header {
+		padding: 5.8rem 0;
+	}
+}
+@import './input';

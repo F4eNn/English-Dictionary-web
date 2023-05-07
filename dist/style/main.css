@@ -52,11 +52,17 @@ html {
 }
 
 :root {
+  --invalid: #ff5252;
+  --vertical-line: #e8e8e8;
+  --purple-primary: #a445ed;
+  --md:clamp(1.3rem, 2.5vw, 2rem);
   --background-color: #fff;
   --default-color: #000;
   --dropdown-option-color: #000;
   --dropdonw-hover-color: #a445ed;
   --dropdown-background-color: #ffff;
+  --switch-theme: #757575;
+  --input-background-color: #f4f4f4;
 }
 
 :root.dark-mode {
@@ -65,6 +71,8 @@ html {
   --background-color: #050505;
   --dropdown-background-color: #1f1f1f;
   --dropdown-box-shadow: #6a2d99;
+  --switch-theme: #a445ed;
+  --input-background-color: #1f1f1f;
 }
 
 :root.light-mode {
@@ -73,6 +81,8 @@ html {
   --default-color: #000;
   --dropdown-box-shadow: #efefef;
   --dropdown-background-color: #ffff;
+  --switch-theme: #757575;
+  --input-background-color: #f4f4f4;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -82,6 +92,8 @@ html {
     --default-color: #fff;
     --dropdown-box-shadow: #6a2d99;
     --background-color: #050505;
+    --switch-theme: #a445ed;
+    --input-background-color: #1f1f1f;
   }
 }
 header {
@@ -107,18 +119,20 @@ header nav .buttons-container .dropdown > button {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-right: 2rem;
-  padding: 1rem 2rem;
-  border-right: 1px solid red;
-  font-size: 2rem;
-  min-width: 170px;
+  margin-right: clamp(1rem, 2.5vw, 3rem);
+  padding: 0.6rem 2.5rem;
+  border-right: 1px solid var(--vertical-line);
+  font-size: var(--md);
+  min-width: 145px;
+  font-weight: 600;
 }
 header nav .buttons-container .content {
   position: absolute;
-  left: -20px;
+  left: -3.6rem;
+  top: 4.5rem;
   border-radius: 10px;
-  min-width: 160px;
-  padding: 1rem 0 1rem;
+  min-width: 183px;
+  padding: 1rem 0 2rem;
   background-color: var(--dropdown-background-color);
   box-shadow: 0 5px 16px 7px var(--dropdown-box-shadow);
 }
@@ -128,7 +142,7 @@ header nav .buttons-container .hide-content {
 header nav .buttons-container .content button {
   color: var(--dropdown-option-color);
   font-size: 1.8rem;
-  padding: 1.5rem 5rem 1rem 2rem;
+  padding: 1.5rem 5rem 0.4rem 2rem;
   width: 100%;
   text-align: left;
   transition: color 0.3s;
@@ -139,6 +153,84 @@ header nav .buttons-container .content button:hover {
 header nav .buttons-container .theme-button {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  min-width: 82px;
+}
+header nav .buttons-container .theme-button button {
+  height: 20px;
+  width: 40px;
+  border-radius: 10px;
+  position: relative;
+  background-color: var(--switch-theme);
+  transition: background-color 0.3s;
+}
+header nav .buttons-container .theme-button svg {
+  stroke: var(--switch-theme);
+}
+header nav .buttons-container .theme-button button:hover {
+  background-color: var(--purple-primary);
+}
+header nav .buttons-container .theme-button .circle-btn-element {
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  transition: right 0.5s;
+}
+header nav .buttons-container .theme-button .dark-mode-off {
+  right: 22px;
+}
+
+@media (max-width: 375px) {
+  header {
+    padding: 5.8rem 0;
+  }
+}
+header .form {
+  display: flex;
+  align-items: center;
+  margin-top: 4.8rem;
+  background-color: var(--input-background-color);
+  border-radius: 10px;
+  width: 100%;
+  height: 62px;
+  border: none;
+}
+header .form input {
+  color: var(--default-color);
+  font-size: var(--md);
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding-left: 2.5rem;
+  font-weight: 600;
+}
+header .form input:focus {
+  outline: none;
+}
+header .form button {
+  padding: 0 2.5rem 0 2.5rem;
+  height: 100%;
+}
+header .form:focus-within {
+  outline: 1px solid var(--purple-primary);
+}
+header .invalid:focus-within {
+  outline: 1px solid var(--invalid);
+}
+
+.error-text {
+  visibility: hidden;
+  align-self: flex-start;
+  margin-top: 1rem;
+  font-size: var(--md);
+  color: var(--invalid);
 }
 
 /*# sourceMappingURL=main.css.map */

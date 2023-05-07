@@ -42,13 +42,21 @@ html {
 	color: var(--default-color);
 }
 
-
 :root {
+	//colors for all Modes
+	--invalid: #ff5252;
+	--vertical-line: #e8e8e8;
+	--purple-primary: #a445ed;
+	//fonts
+	--md:clamp(1.3rem, 2.5vw, 2rem);
+
 	--background-color: #fff;
 	--default-color: #000;
 	--dropdown-option-color: #000;
 	--dropdonw-hover-color: #a445ed;
 	--dropdown-background-color: #ffff;
+	--switch-theme: #757575;
+	--input-background-color: #f4f4f4;
 }
 :root.dark-mode {
 	--dropdown-option-color: #fff;
@@ -56,6 +64,8 @@ html {
 	--background-color: #050505;
 	--dropdown-background-color: #1f1f1f;
 	--dropdown-box-shadow: #6a2d99;
+	--switch-theme: #a445ed;
+	--input-background-color: #1f1f1f;
 }
 :root.light-mode {
 	--dropdown-option-color: #000;
@@ -63,6 +73,8 @@ html {
 	--default-color: #000;
 	--dropdown-box-shadow: #efefef;
 	--dropdown-background-color: #ffff;
+	--switch-theme: #757575;
+	--input-background-color: #f4f4f4;
 }
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -71,6 +83,8 @@ html {
 		--default-color: #fff;
 		--dropdown-box-shadow: #6a2d99;
 		--background-color: #050505;
+		--switch-theme: #a445ed;
+		--input-background-color: #1f1f1f;
 	}
 }
 
