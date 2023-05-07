@@ -55,6 +55,7 @@ html {
   --invalid: #ff5252;
   --vertical-line: #e8e8e8;
   --purple-primary: #a445ed;
+  --gray-color: #757575;
   --md:clamp(1.3rem, 2.5vw, 2rem);
   --background-color: #fff;
   --default-color: #000;
@@ -231,6 +232,30 @@ header .invalid:focus-within {
   margin-top: 1rem;
   font-size: var(--md);
   color: var(--invalid);
+}
+
+.error-msg-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+.error-msg-container h2 {
+  font-size: 6rem;
+}
+.error-msg-container h3 {
+  text-transform: capitalize;
+  font-size: var(--md);
+  margin-top: 2.4rem;
+  color: var(--default-color);
+}
+.error-msg-container p {
+  width: 95%;
+  font-size: var(--md);
+  text-align: center;
+  margin-top: 1.2rem;
+  color: var(--gray-color);
 }
 
 /*# sourceMappingURL=main.css.map */

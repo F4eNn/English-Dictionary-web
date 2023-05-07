@@ -1,0 +1,23 @@
+.error-msg-container {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	flex-direction: column;
+	margin-top: 3rem;
+	h2 {
+		font-size: 6rem;
+	}
+	h3 {
+        text-transform: capitalize;
+		font-size: var(--md);
+		margin-top: 2.4rem;
+		color: var(--default-color);
+	}
+	p {
+		width: 95%;
+		font-size: var(--md);
+		text-align: center;
+		margin-top: 1.2rem;
+		color: var(--gray-color);
+	}
+}

@@ -9,7 +9,7 @@ header {
 		width: 100%;
 		height: 62px;
 		border: none;
-		
+
 		input {
 			color: var(--default-color);
 			font-size: var(--md);
@@ -36,10 +36,10 @@ header {
 		outline: 1px solid var(--invalid);
 	}
 }
-.error-text{
-    visibility: hidden;
-    align-self: flex-start;
-    margin-top: 1rem;
-    font-size: var(--md);
-    color: var(--invalid);
+.error-text {
+	visibility: hidden;
+	align-self: flex-start;
+	margin-top: 1rem;
+	font-size: var(--md);
+	color: var(--invalid);
 }

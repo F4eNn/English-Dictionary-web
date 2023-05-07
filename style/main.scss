@@ -47,6 +47,7 @@ html {
 	--invalid: #ff5252;
 	--vertical-line: #e8e8e8;
 	--purple-primary: #a445ed;
+	--gray-color: #757575;
 	//fonts
 	--md:clamp(1.3rem, 2.5vw, 2rem);
 
@@ -89,3 +90,4 @@ html {
 }
 
 @import './header/header';
+@import './content/no-definitions-found'
