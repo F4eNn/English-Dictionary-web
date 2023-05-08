@@ -1,0 +1,32 @@
+.keyword-title-container {
+	margin-top: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	font-size: 5rem;
+	color: var(--default-color);
+	h1 {
+		text-transform: capitalize;
+		font-size: clamp(3rem, 5vw, 6rem);
+		margin-bottom: -1rem;
+	}
+	span {
+		color: var(--purple-primary);
+		font-size: var(--xl);
+	}
+
+	button svg {
+		width: clamp(85%, 10vw, 100%);
+		fill: #c59ae677;
+		transition: fill 0.3s;
+	}
+
+	button svg path {
+		fill: #a445ed;
+	}
+	button:hover svg {
+		fill: #a445ed;
+	}
+	button:hover svg path {
+		fill: #ffffff;
+	}
+}

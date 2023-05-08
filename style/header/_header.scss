@@ -2,7 +2,7 @@ header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 5.8rem 3rem;
+	// padding: 5.8rem 3rem;
 	// width: 100%;
 
 	nav {
@@ -95,9 +95,5 @@ header {
 		}
 	}
 }
-@media (max-width: 375px) {
-	header {
-		padding: 5.8rem 0;
-	}
-}
+
 @import './input';
