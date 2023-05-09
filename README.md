@@ -15,7 +15,7 @@ Users should be able to:
 - Have the correct color scheme chosen for them based on their computer preferences.
 
 ### Built with
-
+    web app using the [Free Dictionary API](https://dictionaryapi.dev/)
 - Typescript
 - Semantic HTML5 markup
 - SCSS custom properties
