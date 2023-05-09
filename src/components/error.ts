@@ -1,10 +1,9 @@
-import { ErrorMsg } from '../models/error-msg-interface'
-
-const main: HTMLElement = document.querySelector('main')!
+import { errorMsg } from '../API/data.js'
+export const main: HTMLElement = document.querySelector('main')!
 const errorTemplate: HTMLTemplateElement = document.querySelector('.error-template')!
 
-export const wordDoesNotExist = (errorMsg: ErrorMsg) => {
-	const { title, message1, message2 } = errorMsg
+export const wordDoesNotExist = () => {
+	const { title, message1, message2 } = errorMsg[0]
 
 	const errorTemp = errorTemplate.content.cloneNode(true) as HTMLElement
 	errorTemp.querySelector('h3')!.textContent = `${title}`
@@ -14,9 +13,9 @@ export const wordDoesNotExist = (errorMsg: ErrorMsg) => {
 		main.appendChild(errorTemp)
 	}
 }
-export const removeError = () => {
-	if (main.children.length === 1) {
-		main.children[0].remove()
-		return
-	}
-}
+// export const removeError = () => {
+// 	if (main.children.length === 1) {
+// 		main.children[0].remove()
+// 		return
+// 	}
+// }

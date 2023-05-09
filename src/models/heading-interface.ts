@@ -1,6 +1,7 @@
 export interface HeadingData {
 	title: string
-	phonetic: string
-	audioSrc: string
-   
+	phonetics: {
+		text: string
+		audio: string
+	}[]
 }
