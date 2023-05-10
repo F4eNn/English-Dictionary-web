@@ -13,8 +13,6 @@ export const isInputEmpty = (e: Event) => {
 	}
 	form.classList.remove('invalid')
 	errorMsg.style.visibility = 'hidden'
-
 	getDataFromApi(inputValue)
+	input.value = ''
 }
-
-

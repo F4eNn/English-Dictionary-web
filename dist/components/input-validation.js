@@ -13,5 +13,6 @@ export const isInputEmpty = (e) => {
     form.classList.remove('invalid');
     errorMsg.style.visibility = 'hidden';
     getDataFromApi(inputValue);
+    input.value = '';
 };
 //# sourceMappingURL=input-validation.js.map

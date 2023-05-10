@@ -10,6 +10,7 @@ export const getDataFromApi = async (inputValue: string) => {
 
 		const data = await response.json()
 		if (!response.ok) {
+			clearContent()
 			wordDoesNotExist()
 			throw new Error('something went wrong!')
 		}
@@ -17,12 +18,11 @@ export const getDataFromApi = async (inputValue: string) => {
 			title: data[0].word,
 			phonetics: data[0].phonetics,
 		}
-		console.log(data)
 		clearContent()
+		const contentData = data[0].meanings
+		const addressUrl = data[0].sourceUrls[0]
 		showHeadingContent(headingData)
-		const nounData = data[0].meanings
-		
-		showFirstPartOfContent(nounData)
+		showFirstPartOfContent(contentData, addressUrl)
 	} catch (error) {
 		console.error(error)
 	}

@@ -1,7 +1,6 @@
 export const main: HTMLElement = document.querySelector('main')!
 export const clearContent = () => {
-	if (main.children.length > 0) {
-		main.children[0].remove()
-		return
-	}
+	main.querySelector('.error-msg-container')?.remove()
+	main.querySelector('.keyword-title-container')?.remove()
+	main.querySelector('.meaning-container')?.remove()
 }

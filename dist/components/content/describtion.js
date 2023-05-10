@@ -1,24 +1,34 @@
 import { main } from '../error.js';
 const contentTemplate = document.querySelector('.content-template');
-export const showFirstPartOfContent = (data) => {
-    console.log(data);
+export const showFirstPartOfContent = (contentData, addressUrl) => {
+    console.log(contentData);
+    if (!main.querySelector('.keyword-title-container')) {
+        return;
+    }
     const contentTemp = contentTemplate.content.cloneNode(true);
     const ulNoun = contentTemp.querySelector('#noun-ul-list');
     const ulVerb = contentTemp.querySelector('#verb-ul-list');
-    fetchRelevantData(data, ulVerb, 'verb');
-    fetchRelevantData(data, ulNoun, 'noun');
+    const paraElement = contentTemp.querySelector('.synonyms p');
+    const address = contentTemp.querySelector('#link');
+    address.setAttribute('href', `${addressUrl}`);
+    address.textContent = `${addressUrl}`;
+    fetchRelevantData(contentData, ulVerb, 'verb', paraElement);
+    fetchRelevantData(contentData, ulNoun, 'noun', paraElement);
     main.appendChild(contentTemp);
 };
-const fetchRelevantData = (data, ul, partOfSpeech) => {
+const fetchRelevantData = (data, ul, partOfSpeech, synonymsPara) => {
     for (const index in data) {
         if (data[index].partOfSpeech === partOfSpeech) {
             const textData = data[index].definitions.map((item) => item.definition);
             const validData = textData.slice(0, 5);
+            const synonyms = data[index].synonyms;
+            const getFewSynonyms = synonyms.slice(0, 1);
+            synonymsPara.textContent = `${getFewSynonyms}`;
             if (partOfSpeech === 'verb') {
                 const exampleData = data[index].definitions.map((item) => item.example);
                 exampleData.forEach((item, i) => {
                     if (item == undefined) {
-                        exampleData[i] = 'Not Found 🙄';
+                        exampleData[i] = 'Not Found any example 🙄';
                     }
                 });
                 const shorterData = exampleData.slice(0, 5);

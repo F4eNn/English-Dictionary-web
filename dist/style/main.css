@@ -321,7 +321,7 @@ header .invalid:focus-within {
   gap: 1.5rem;
   margin-top: 5.2rem;
 }
-.meaning-container .synonyms button {
+.meaning-container .synonyms p {
   position: relative;
   font-weight: 600;
   font-size: var(--md);
@@ -329,7 +329,7 @@ header .invalid:focus-within {
   color: var(--purple-primary);
   text-transform: lowercase;
 }
-.meaning-container .synonyms button::after {
+.meaning-container .synonyms p::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -340,7 +340,7 @@ header .invalid:focus-within {
   border-bottom: 2px solid var(--purple-primary);
   transition: transform 0.3s linear;
 }
-.meaning-container .synonyms button:hover::after {
+.meaning-container .synonyms p:hover::after {
   transform: scale(1);
   transform-origin: left;
 }

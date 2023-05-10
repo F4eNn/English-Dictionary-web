@@ -17,6 +17,7 @@ export const getDataFromApi = (inputValue) => __awaiter(void 0, void 0, void 0, 
         const response = yield fetch(URL_API + '/' + inputValue);
         const data = yield response.json();
         if (!response.ok) {
+            clearContent();
             wordDoesNotExist();
             throw new Error('something went wrong!');
         }
@@ -24,11 +25,11 @@ export const getDataFromApi = (inputValue) => __awaiter(void 0, void 0, void 0, 
             title: data[0].word,
             phonetics: data[0].phonetics,
         };
-        console.log(data);
         clearContent();
+        const contentData = data[0].meanings;
+        const addressUrl = data[0].sourceUrls[0];
         showHeadingContent(headingData);
-        const nounData = data[0].meanings;
-        showFirstPartOfContent(nounData);
+        showFirstPartOfContent(contentData, addressUrl);
     }
     catch (error) {
         console.error(error);
