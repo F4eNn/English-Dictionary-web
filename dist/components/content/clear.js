@@ -5,4 +5,4 @@ export const clearContent = () => {
         return;
     }
 };
-//# sourceMappingURL=clear-content.js.map
+//# sourceMappingURL=clear.js.map

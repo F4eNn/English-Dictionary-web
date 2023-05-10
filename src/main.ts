@@ -37,4 +37,3 @@ document.addEventListener('click', (e: MouseEvent) => {
 		content.classList.add('hide-content')
 	}
 })
-

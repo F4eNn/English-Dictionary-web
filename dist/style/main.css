@@ -348,10 +348,13 @@ header .invalid:focus-within {
   margin-top: 1.2rem;
 }
 .meaning-container q {
-  margin-top: 0.3rem;
   margin-left: 4.2rem;
   font-size: var(--sm);
   color: var(--gray-color);
+}
+.meaning-container .verb-ul-list li {
+  margin-top: 2.2rem;
+  margin-bottom: 0.3rem;
 }
 .meaning-container .source-container {
   margin-top: 4rem;

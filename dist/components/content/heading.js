@@ -1,4 +1,4 @@
-import { main, wordDoesNotExist } from './error.js';
+import { main, wordDoesNotExist } from '../error.js';
 export const showHeadingContent = (data) => {
     const heading = document.querySelector('.title-template');
     const headingTemp = heading.content.cloneNode(true);

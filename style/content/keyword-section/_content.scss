@@ -63,10 +63,16 @@
 		margin-top: 1.2rem;
 	}
 	q {
-		margin-top: 0.3rem;
 		margin-left: 4.2rem;
 		font-size: var(--sm);
 		color: var(--gray-color);
+	}
+	.verb-ul-list {
+		li {
+			margin-top: 2.2rem;
+			margin-bottom: .3rem;
+		}
+		
 	}
 	.source-container {
 		margin-top: 4rem;
