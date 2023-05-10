@@ -3,8 +3,7 @@ import { DataDescription } from '../../models/data-content-interface'
 
 const contentTemplate: HTMLTemplateElement = document.querySelector('.content-template')!
 
-export const showFirstPartOfContent = (contentData: DataDescription, addressUrl: string) => {
-	console.log(contentData)
+export const showContent = (contentData: DataDescription, addressUrl: string) => {
 	if (!main.querySelector('.keyword-title-container')) {
 		return
 	}
@@ -13,12 +12,14 @@ export const showFirstPartOfContent = (contentData: DataDescription, addressUrl:
 	const ulVerb = contentTemp.querySelector('#verb-ul-list') as HTMLUListElement
 	const paraElement = contentTemp.querySelector('.synonyms p') as HTMLParagraphElement
 	const address = contentTemp.querySelector('#link') as HTMLAnchorElement
+
 	address.setAttribute('href', `${addressUrl}`)
 	address.textContent = `${addressUrl}`
 	fetchRelevantData(contentData, ulVerb, 'verb', paraElement)
 	fetchRelevantData(contentData, ulNoun, 'noun', paraElement)
 	main.appendChild(contentTemp)
 }
+
 const fetchRelevantData = (
 	data: any,
 	ul: HTMLUListElement,
@@ -44,9 +45,12 @@ const fetchRelevantData = (
 				for (let i = 0; i < shorterData.length; i++) {
 					const quoteElement = document.createElement('q')
 					quoteElement.textContent = `${exampleData[i]}`
+					const quoteContainer = document.createElement('div')
+					quoteContainer.classList.add('quote-container')
+					quoteContainer.appendChild(quoteElement)
 					const liItem = document.createElement('li')
 					liItem.textContent = `${textData[i]}`
-					ul?.append(liItem, quoteElement)
+					ul?.append(liItem, quoteContainer)
 				}
 				return
 			}

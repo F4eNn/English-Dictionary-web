@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { wordDoesNotExist } from '../components/error.js';
 import { showHeadingContent } from '../components/content/heading.js';
 import { clearContent } from '../components/content/clear.js';
-import { showFirstPartOfContent } from '../components/content/describtion.js';
+import { showContent } from '../components/content/describtion.js';
 const URL_API = 'https://api.dictionaryapi.dev/api/v2/entries/en';
 export const getDataFromApi = (inputValue) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -29,9 +29,8 @@ export const getDataFromApi = (inputValue) => __awaiter(void 0, void 0, void 0, 
         const contentData = data[0].meanings;
         const addressUrl = data[0].sourceUrls[0];
         showHeadingContent(headingData);
-        showFirstPartOfContent(contentData, addressUrl);
+        showContent(contentData, addressUrl);
     }
-    catch (error) {
-    }
+    catch (error) { }
 });
 //# sourceMappingURL=data.js.map

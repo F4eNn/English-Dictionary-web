@@ -37,7 +37,6 @@ header {
 				padding: 1rem 0 2rem;
 				background-color: var(--dropdown-background-color);
 				box-shadow: 0 5px 16px 7px var(--dropdown-box-shadow);
-				// border: 1px solid red;
 			}
 			.hide-content {
 				display: none;
@@ -49,7 +48,6 @@ header {
 				width: 100%;
 				text-align: left;
 				transition: color 0.3s;
-				// font-weight: 600;
 			}
 			.content button:hover {
 				color: var(--dropdonw-hover-color);

@@ -62,17 +62,19 @@
 	.title-verb {
 		margin-top: 1.2rem;
 	}
-	q {
+	.quote-container {
 		margin-left: 4.2rem;
-		font-size: var(--sm);
-		color: var(--gray-color);
+
+		q {
+			font-size: var(--sm);
+			color: var(--gray-color);
+		}
 	}
 	.verb-ul-list {
 		li {
 			margin-top: 2.2rem;
-			margin-bottom: .3rem;
+			margin-bottom: 0.3rem;
 		}
-		
 	}
 	.source-container {
 		margin-top: 4rem;
@@ -88,9 +90,7 @@
 		}
 	}
 }
-.home {
-	height: 1000px;
-}
+
 @media (max-width: 576px) {
 	.meaning-container {
 		.synonyms {

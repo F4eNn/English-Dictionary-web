@@ -1,13 +1,12 @@
 import { wordDoesNotExist } from '../components/error.js'
 import { showHeadingContent } from '../components/content/heading.js'
 import { clearContent } from '../components/content/clear.js'
-import { showFirstPartOfContent } from '../components/content/describtion.js'
+import { showContent } from '../components/content/describtion.js'
 const URL_API = 'https://api.dictionaryapi.dev/api/v2/entries/en'
 
 export const getDataFromApi = async (inputValue: string) => {
 	try {
 		const response = await fetch(URL_API + '/' + inputValue)
-
 		const data = await response.json()
 		if (!response.ok) {
 			clearContent()
@@ -22,7 +21,6 @@ export const getDataFromApi = async (inputValue: string) => {
 		const contentData = data[0].meanings
 		const addressUrl = data[0].sourceUrls[0]
 		showHeadingContent(headingData)
-		showFirstPartOfContent(contentData, addressUrl)
-	} catch (error) {
-	}
+		showContent(contentData, addressUrl)
+	} catch (error) {}
 }

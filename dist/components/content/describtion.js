@@ -1,7 +1,6 @@
 import { main } from '../error.js';
 const contentTemplate = document.querySelector('.content-template');
-export const showFirstPartOfContent = (contentData, addressUrl) => {
-    console.log(contentData);
+export const showContent = (contentData, addressUrl) => {
     if (!main.querySelector('.keyword-title-container')) {
         return;
     }
@@ -35,9 +34,12 @@ const fetchRelevantData = (data, ul, partOfSpeech, synonymsPara) => {
                 for (let i = 0; i < shorterData.length; i++) {
                     const quoteElement = document.createElement('q');
                     quoteElement.textContent = `${exampleData[i]}`;
+                    const quoteContainer = document.createElement('div');
+                    quoteContainer.classList.add('quote-container');
+                    quoteContainer.appendChild(quoteElement);
                     const liItem = document.createElement('li');
                     liItem.textContent = `${textData[i]}`;
-                    ul === null || ul === void 0 ? void 0 : ul.append(liItem, quoteElement);
+                    ul === null || ul === void 0 ? void 0 : ul.append(liItem, quoteContainer);
                 }
                 return;
             }

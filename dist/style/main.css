@@ -11,6 +11,7 @@ body {
   height: 100vh;
   font-family: sans-serif;
   background-color: var(--background-color);
+  transition: background-color 0.4s;
 }
 
 button {
@@ -350,8 +351,10 @@ header .invalid:focus-within {
 .meaning-container .title-verb {
   margin-top: 1.2rem;
 }
-.meaning-container q {
+.meaning-container .quote-container {
   margin-left: 4.2rem;
+}
+.meaning-container .quote-container q {
   font-size: var(--sm);
   color: var(--gray-color);
 }
@@ -371,10 +374,6 @@ header .invalid:focus-within {
 }
 .meaning-container .source-container h4 {
   text-decoration: underline;
-}
-
-.home {
-  height: 1000px;
 }
 
 @media (max-width: 576px) {

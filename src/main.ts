@@ -1,12 +1,13 @@
 import { isInputEmpty } from './components/input-validation.js'
 import { toggleThemePreference, isDarkOrLightMode } from './components/theme-preference.js'
-import { switchFont } from './components/content/fonts/switch-font.js'
+import { switchFont } from './components/fonts/switch-font.js'
 
 const inputBtn: HTMLButtonElement = document.querySelector('#input-btn')!
 const switchModeBtn: HTMLButtonElement = document.querySelector('#switch-mode')!
 
 switchModeBtn.addEventListener('click', toggleThemePreference)
 isDarkOrLightMode()
+
 inputBtn.addEventListener('click', isInputEmpty)
 
 const dropdownBtn: HTMLButtonElement = document.querySelector('button')!
