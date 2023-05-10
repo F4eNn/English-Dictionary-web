@@ -28,7 +28,7 @@ const fetchRelevantData = (data, ul, partOfSpeech, synonymsPara) => {
                 const exampleData = data[index].definitions.map((item) => item.example);
                 exampleData.forEach((item, i) => {
                     if (item == undefined) {
-                        exampleData[i] = 'Not Found any example 🙄';
+                        exampleData[i] = 'Not found any example 🙄';
                     }
                 });
                 const shorterData = exampleData.slice(0, 5);

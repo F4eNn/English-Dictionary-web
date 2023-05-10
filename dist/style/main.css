@@ -173,6 +173,9 @@ header nav .buttons-container .content button {
 header nav .buttons-container .content button:hover {
   color: var(--dropdonw-hover-color);
 }
+header nav .buttons-container .content li {
+  list-style: none;
+}
 header nav .buttons-container .theme-button {
   display: flex;
   align-items: center;

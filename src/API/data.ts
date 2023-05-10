@@ -24,6 +24,5 @@ export const getDataFromApi = async (inputValue: string) => {
 		showHeadingContent(headingData)
 		showFirstPartOfContent(contentData, addressUrl)
 	} catch (error) {
-		console.error(error)
 	}
 }

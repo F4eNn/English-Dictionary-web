@@ -1,12 +1,7 @@
 import { main } from '../error.js'
+import { DataDescription } from '../../models/data-content-interface'
 
 const contentTemplate: HTMLTemplateElement = document.querySelector('.content-template')!
-
-interface DataDescription {
-	partOfSpeech: string
-	definitions: { definition: string; example: string }
-	synonyms: []
-}
 
 export const showFirstPartOfContent = (contentData: DataDescription, addressUrl: string) => {
 	console.log(contentData)
@@ -42,7 +37,7 @@ const fetchRelevantData = (
 				const exampleData = data[index].definitions.map((item: any) => item.example)
 				exampleData.forEach((item: any, i: any) => {
 					if (item == undefined) {
-						exampleData[i] = 'Not Found any example 🙄'
+						exampleData[i] = 'Not found any example 🙄'
 					}
 				})
 				const shorterData = exampleData.slice(0, 5)

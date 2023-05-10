@@ -32,7 +32,6 @@ export const getDataFromApi = (inputValue) => __awaiter(void 0, void 0, void 0, 
         showFirstPartOfContent(contentData, addressUrl);
     }
     catch (error) {
-        console.error(error);
     }
 });
 //# sourceMappingURL=data.js.map
