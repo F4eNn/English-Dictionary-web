@@ -73,7 +73,9 @@ html {
   --xl: clamp(1.5rem, 2.5vw, 2.5rem);
   --background-color: #fff;
   --default-color: #000;
-  --dropdown-box-shadow: #efefef;
+  --dropdown-box-shadow1: #efefef;
+  --dropdown-box-shadow2: #efefef;
+  --dropdown-box-shadow3: #efefef;
   --dropdown-option-color: #000;
   --dropdonw-hover-color: #a445ed;
   --dropdown-background-color: #ffff;
@@ -87,7 +89,9 @@ html {
   --default-color: #fff;
   --background-color: #050505;
   --dropdown-background-color: #1f1f1f;
-  --dropdown-box-shadow: #6a2d99;
+  --dropdown-box-shadow1: #8333b227;
+  --dropdown-box-shadow2: #5d247e96;
+  --dropdown-box-shadow3: #a445ed7e;
   --switch-theme: #a445ed;
   --input-background-color: #1f1f1f;
   --separete-line: #3a3a3a;
@@ -97,7 +101,9 @@ html {
   --dropdown-option-color: #000;
   --background-color: #fff;
   --default-color: #000;
-  --dropdown-box-shadow: #efefef;
+  --dropdown-box-shadow1: #efefef;
+  --dropdown-box-shadow2: #efefef;
+  --dropdown-box-shadow3: #efefef;
   --dropdown-background-color: #ffff;
   --switch-theme: #757575;
   --input-background-color: #f4f4f4;
@@ -109,14 +115,16 @@ html {
     --dropdown-background-color: #1f1f1f;
     --dropdown-option-color: #fff;
     --default-color: #fff;
-    --dropdown-box-shadow: #6a2d99;
+    --dropdown-box-shadow1: #8333b227;
+    --dropdown-box-shadow2: #5d247e96;
+    --dropdown-box-shadow3: #a445ed7e;
     --background-color: #050505;
     --switch-theme: #a445ed;
     --input-background-color: #1f1f1f;
     --separete-line: #3a3a3a;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 576px) {
   .wrapper {
     padding: 5.8rem 0;
   }
@@ -158,7 +166,7 @@ header nav .buttons-container .content {
   min-width: 183px;
   padding: 1rem 0 2rem;
   background-color: var(--dropdown-background-color);
-  box-shadow: 0 5px 16px 7px var(--dropdown-box-shadow);
+  box-shadow: 0 0 30px 10px var(--dropdown-box-shadow1), 0 0 30px 5px var(--dropdown-box-shadow2), 0 0 20px 0 var(--dropdown-box-shadow3);
 }
 header nav .buttons-container .hide-content {
   display: none;
@@ -394,7 +402,7 @@ header .invalid:focus-within {
 .error-msg-container h3 {
   text-transform: capitalize;
   font-size: var(--md);
-  margin-top: 2.4rem;
+  margin-top: 1rem;
   color: var(--default-color);
 }
 .error-msg-container p {

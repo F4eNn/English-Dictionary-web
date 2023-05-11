@@ -1,5 +1,6 @@
-const currentTheme = window.matchMedia('(prefers-color-scheme: dark').matches
 const circleElement: HTMLSpanElement = document.querySelector('.circle-btn-element')!
+const currentTheme = window.matchMedia('(prefers-color-scheme: dark').matches
+console.log(currentTheme)
 export const toggleThemePreference = () => {
 	if (currentTheme) {
 		document.documentElement.classList.toggle('light-mode')
